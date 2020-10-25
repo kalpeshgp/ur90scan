@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-ur90scan" version="0.0.1">
+    <name>ur90scan</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/kalpeshgp/ur90scan/ur90scan.git</repo>
+    <issue>https://github.com/kalpeshgp/ur90scan/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/ur90scan.js" name="ur90scan">
+        <clobbers target="window.plugins.ur90scan" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ur90scan">
+                <param name="android-package" value="com.kalpeshgp.cordova.plugin.ur90scan"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ur90scan.java" target-dir="src/com/kalpeshgp/cordova/plugin" />
+    </platform>
+</plugin>
